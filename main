@@ -1,0 +1,46 @@
+choice1 = int(input('''Hello. Please enter a number based on the following information:"
+    Enter 1 if you want to find z from the wavelength
+    Enter 2 if you want to find z from v and c
+    Enter 3 if you want to find z from the frequency
+    '''))
+
+while choice1 < 1 or choice1 > 3:
+    choice1 = int(input('''Hello. Please enter a number based on the following information:"
+    Enter 1 if you want to find z from the wavelength
+    Enter 2 if you want to find z from v and c
+    Enter 3 if you want to find z from the frequency
+    '''))
+    if choice1 == -1:
+        break
+
+if choice1 == 1:
+    observed_wavelength =  int(input("Please enter the observed wavelength (in m) "))
+    actual_wavelength = int(input("Please enter the actual wavelength (in m) "))
+    diff_in_wavelength = actual_wavelength - observed_wavelength
+    z = diff_in_wavelength / actual_wavelength
+    print("The z value is", z)
+    if z > 0:
+        print("Since z is positive, redshift has occured")
+    else:
+        print("Since z is negative, blueshift has occured")
+
+if choice1 == 2:
+    v =  int(input("Please enter the recession velocity (in m/s) "))
+    c = int(input("Please enter the speed of the medium (in m/s) "))
+    z = (v / c) * -1
+    print("The z value is", z)
+    if z > 0:
+        print("Since z is positive, redshift has occured")
+    else:
+        print("Since z is negative, blueshift has occured")
+
+if choice1 == 3:
+    observed_frequency =  int(input("Please enter the observed frequency (in Hz) "))
+    actual_frequency = int(input("Please enter the actual frequency (in Hz) "))
+    diff_in_frequency = actual_frequency - observed_frequency
+    z = diff_in_frequency / actual_frequency
+    print("The z value is", z)
+    if z > 0:
+        print("Since z is positive, redshift has occured")
+    else:
+        print("Since z is negative, blueshift has occured")
